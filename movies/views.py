@@ -16,5 +16,5 @@ def detail(request, movie_id):
     try:
         movie=Movie.objects.get(pk=movie_id)
         return render(request, 'movies/detail.html',{'movies': movie})
-     except: Movie.DoesNotExist():
+    except Movie.DoesNotExist():
         raise Http404()   
